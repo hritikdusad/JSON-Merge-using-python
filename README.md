@@ -69,4 +69,9 @@ The main goal is to Merge n-json files into a single file or multiple size of sp
         1. Python
  
      
-     
+#### Execution Commands
+    1. cd to the directory where python file is
+    2. Input the file path.
+    3. Base Name of the file.
+    4. Output name of file
+    5. Size of output file in bytes.
