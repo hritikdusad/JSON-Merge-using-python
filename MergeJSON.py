@@ -2,6 +2,7 @@ import os
 import json
 
 def FilePath(file_index,file_type = 'input'):
+    '''Returns full path of a file'''
     
     if file_type == 'input':
         file_name = InputFileBaseName
@@ -13,12 +14,14 @@ def FilePath(file_index,file_type = 'input'):
     return file_path
 
 def MergeDict(data1,data2):
+    '''Merge Dictionaries based on different data types'''
+    
     for key,val in data1.items():
         if key in data2:
             if type(val) == list:
                 data2[key].extend(val)
             elif type(val) == dict:
-                MergeJSON(val,data2[key])
+                MergeDict(val,data2[key])
             else:
                 data2[key] = val
         else:
@@ -26,6 +29,7 @@ def MergeDict(data1,data2):
 
 
 def MergeJSON(): 
+    '''Merge JSON files'''
     
     input_index = 1
     output_index = 1
